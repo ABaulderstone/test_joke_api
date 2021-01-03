@@ -1,0 +1,35 @@
+### Index
+GET http://localhost:3000/api/jokes
+
+### Joke ID 1 
+
+GET http://localhost:3000/api/jokes/1
+
+
+### Successful post
+POST http://localhost:3000/api/jokes
+content-type: application/json
+
+{
+    "body": "Funny Pun",
+    "category_id": 1
+}
+
+### Unsuccessful post
+POST http://localhost:3000/api/jokes
+content-type: application/json
+
+{
+    "body": "Funny Pun"
+}
+
+### Update Joke 1 
+PUT http://localhost:3000/api/jokes/1
+content-type: application/json
+
+{
+    "body": "Funny Pun"
+}
+
+### Delete Joke 1 
+DELETE http://localhost:3000/api/jokes/1

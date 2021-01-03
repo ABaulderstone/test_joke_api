@@ -1,0 +1,22 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+    categories = ["Puns", "Programming", "Knock Knock", "Limerick"]
+    if Category.all.length == 0 
+        categories.each do |category| 
+            Category.create(name: category)
+            puts "Created #{category} category"
+        end 
+    end 
+
+    if Joke.all.length == 0 
+        Joke.create(category_id: 1, body: "A good steak pun is a rare medium done well")
+        Joke.create(category_id: 1, body: "I was wondering why the ball was getting bigger. Then it hit me") 
+        Joke.create(category_id: 1, body: "What’s the difference between a hippo and a zippo? One is really heavy and the other is a little lighter")
+        Joke.create(category_id: 2, body: "In order to understand recursion you must first understand recursion.")
+        Joke.create(category_id: 2, body: "A programmer is heading out to the grocery store, so his wife tells him \"get a gallon of milk, and if they have eggs, get a dozen.\" He returns with 13 gallons of milk.")
+    end
