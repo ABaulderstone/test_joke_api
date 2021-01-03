@@ -1,24 +1,16 @@
-# README
+# Things to remember
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## adding jwt to signup
+  ```Ruby
+            @user = User.new(user_params)
+        
+        if @user.save
+            auth_token = Knock::AuthToken.new payload: { sub: @user.id }
+             render json: {username: @user.username, jwt: auth_token.token}, status: :created
+        else
+             render json: @user.errors, status: :unprocessable_entity
+        end
+```
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## add migration 
+`rails generate migration add_user_to_jokes user:references`

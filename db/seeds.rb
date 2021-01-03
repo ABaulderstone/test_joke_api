@@ -13,10 +13,14 @@
         end 
     end 
 
+    if !User.first 
+        User.create(username: "Alex", email: "alex@test.com", password: "password1", password_confirmation: "password1")
+    end 
+
     if Joke.all.length == 0 
-        Joke.create(category_id: 1, body: "A good steak pun is a rare medium done well")
-        Joke.create(category_id: 1, body: "I was wondering why the ball was getting bigger. Then it hit me") 
-        Joke.create(category_id: 1, body: "What’s the difference between a hippo and a zippo? One is really heavy and the other is a little lighter")
-        Joke.create(category_id: 2, body: "In order to understand recursion you must first understand recursion.")
-        Joke.create(category_id: 2, body: "A programmer is heading out to the grocery store, so his wife tells him \"get a gallon of milk, and if they have eggs, get a dozen.\" He returns with 13 gallons of milk.")
+        Joke.create(user_id: 1, category_id: 1, body: "A good steak pun is a rare medium done well")
+        Joke.create(user_id: 1, category_id: 1, body: "I was wondering why the ball was getting bigger. Then it hit me") 
+        Joke.create(user_id: 1, category_id: 1, body: "What’s the difference between a hippo and a zippo? One is really heavy and the other is a little lighter")
+        Joke.create(user_id: 1, category_id: 2, body: "In order to understand recursion you must first understand recursion.")
+        Joke.create(user_id: 1, category_id: 2, body: "A programmer is heading out to the grocery store, so his wife tells him \"get a gallon of milk, and if they have eggs, get a dozen.\" He returns with 13 gallons of milk.")
     end

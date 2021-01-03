@@ -33,3 +33,35 @@ content-type: application/json
 
 ### Delete Joke 1 
 DELETE http://localhost:3000/api/jokes/1
+
+### Successful signin
+POST http://localhost:3000/auth/signin
+content-type: application/json 
+
+{
+
+        "email": "alex@test.com",
+        "password": "password1"
+}
+
+### Unsuccessful signin
+POST http://localhost:3000/auth/signin
+content-type: application/json 
+
+{
+    
+        "email": "alex@test.com",
+        "password": "password"
+    
+}
+
+### successful signup
+POST http://localhost:3000/auth/signup
+content-type: application/json 
+
+{
+    "username": "Alex2",
+    "email": "alex2@test.com",
+    "password": "password1",
+    "password_confirmation": "password1"
+}

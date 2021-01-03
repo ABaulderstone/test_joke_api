@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post 'user_token' => 'user_token#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   scope '/api' do 
     get '/jokes', to: 'jokes#index'
@@ -8,4 +9,9 @@ Rails.application.routes.draw do
     delete 'jokes/:id', to: 'jokes#destroy'
 
   end
+
+  scope '/auth' do
+    post '/signin', to: 'users#sign_in'
+    post '/signup', to: 'users#create'
+   end
 end

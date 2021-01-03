@@ -1,4 +1,5 @@
 class JokesController < ApplicationController
+    before_action :authenticate_user, except: [:index]
     before_action :set_joke, only: [:show, :update, :destroy]
     def index 
         @jokes = Joke.all
